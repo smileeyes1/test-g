@@ -1,1 +1,141 @@
 
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>مغامرة البطل – جدول ٤</title>
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:url("bg.png") no-repeat center fixed;
+  background-size:cover;
+  color:#fff;
+  text-align:center;
+}
+
+/* صندوق اللعبة */
+#game-container{
+  width:480px;
+  margin:30px auto;
+  padding:25px;
+  border-radius:20px;
+  background:rgba(0,0,0,0.55);
+  box-shadow:0 0 30px #00eaff;
+  position:relative;
+  overflow:hidden;
+}
+
+/* شاشة البداية */
+#start-screen{
+  position:fixed;
+  inset:0;
+  background:#061b32;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  z-index:999;
+}
+
+#start-screen h1{
+  font-size:50px;
+  margin-bottom:30px;
+}
+
+#start-btn{
+  padding:15px 40px;
+  font-size:28px;
+  border:none;
+  border-radius:15px;
+  cursor:pointer;
+  background:#00eaff;
+}
+
+/* البطل */
+#hero-img{
+  width:170px;
+  animation:heroFloat 2s infinite;
+}
+
+@keyframes heroFloat{
+  0%{transform:translateY(0)}
+  50%{transform:translateY(-10px)}
+  100%{transform:translateY(0)}
+}
+
+/* الوحش */
+#monster-box{
+  margin-top:15px;
+  background:#1f4068;
+  padding:15px;
+  border-radius:20px;
+  transition:transform linear;
+}
+
+#monster-img{
+  width:140px;
+}
+
+/* شريط طاقة الوحش */
+#monster-hp{
+  width:90%;
+  height:22px;
+  background:#333;
+  margin:10px auto;
+  border-radius:10px;
+  overflow:hidden;
+}
+
+#monster-hp-inner{
+  width:100%;
+  height:100%;
+  background:#2aff6d;
+}
+
+/* القذيفة */
+#bullet{
+  width:12px;
+  height:12px;
+  background:yellow;
+  border-radius:50%;
+  position:absolute;
+  left:120px;
+  bottom:160px;
+  display:none;
+  box-shadow:0 0 10px yellow;
+}
+
+/* إدخال */
+input{
+  padding:10px;
+  font-size:24px;
+  border-radius:10px;
+  width:200px;
+  border:none;
+}
+
+button{
+  padding:12px 30px;
+  font-size:24px;
+  border-radius:14px;
+  background:#00eaff;
+  border:none;
+  margin-top:10px;
+  cursor:pointer;
+}
+
+/* أزرار السرعة */
+.speed-btns button{
+  font-size:18px;
+  margin:5px;
+}
+</style>
+</head>
+
+<body>
+
+<!-- شاشة البداية -->
+<div id="start-screen">
+  <h1>⚔️ مغامرة البطل ⚔️
